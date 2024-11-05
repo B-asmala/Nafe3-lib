@@ -1,0 +1,39 @@
+header.header(data-header='')
+  .container
+    .overlay(data-overlay='')
+    a.logo(href='/overview')
+      img(src='/img/logo.png' alt='logo' width='50' height='50')
+    a(href='/overview')
+      #main-title مكتبة نافع
+    .header-actions
+      a#cart-button(href='/cart')
+        button.header-action-btn
+          ion-icon(name='cart-outline' aria-hidden='true')
+          p.header-action-label السلة
+    button.nav-open-btn(data-nav-open-btn='' aria-label='Open Menu')
+      span
+      span
+      span
+    nav.navbar(data-navbar='')
+      .navbar-top
+        a.logo(href='/overview')
+          img(src='/img/logo.jpeg' alt='logo' width='50' height='50')
+        // inside side list
+        button.nav-close-btn(data-nav-close-btn='' aria-label='Close Menu')
+          ion-icon(name='close-outline')
+      ul.navbar-list
+        li
+          a.navbar-link(href='/overview') الرئيسية
+        li
+          a.navbar-link(href='/overview/#sales') آخر العروض
+        li
+          a.navbar-link(href='/overview/#divs') الأقسام
+        li
+          a.navbar-link(href='#footer') تواصل معنا
+//
+  - custom js link
+
+//
+  - ionicon link
+script(type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js')
+script(nomodule='' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js')

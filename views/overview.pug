@@ -1,0 +1,67 @@
+extends base
+
+block content
+  main
+  article
+    section#sales.section.product
+  .container 
+    h2.h2.section-title آخر العروض
+    ul.product-list
+      each product in starred
+        li
+          .product-card
+            figure.card-banner
+              div
+                img.w-100(src=`https://raw.githubusercontent.com/Nafe3-Library/product-images/refs/heads/main/${product.slug}.jpg` alt=`${product.title}` loading='lazy' width='800' height='1034')
+              
+              .card-actions
+                a.add.card-action-btn.cart-btn(href='#' onclick=`addToCart("${product.title}", "${product.price - product.discount}");`)
+                  ion-icon(name='bag-handle-outline' aria-hidden='true')
+                  p أضف إلى السلة
+            .card-content
+              h3.h4.card-title
+                div=`${product.title}`
+              .card-price
+                data(value=`${product.price - product.discount}`)=  `£${product.price - product.discount}`
+                if product.discount > 0
+                  data(value= `${product.price}`)= `£${product.price}`
+
+    section#divs.divs
+      h2.h2.section-title &#x627;&#x644;&#x623;&#x642;&#x633;&#x627;&#x645;
+      ul.filter-list
+        a(href='/overview/aqeedah')
+          li.division
+            | عقيدة
+        a(href='/overview/tafsir')
+          li.division
+            | تفسير
+        a(href='/overview/hadith')
+          li.division
+            | حديث
+        a(href='/overview/seerah')
+          li.division
+            | سيرة
+        a(href='/overview/feqh')
+          li.division
+            | فقه
+        a(href='/overview/tajweed')
+          li.division
+            | تجويد
+        a(href='/overview/woman')
+          li.division
+            | المرأة والأسرة
+        a(href='/overview/novels')
+          li.division
+            | روايات
+        a(href='/overview/tazkia')
+          li.division
+            | تزكية
+        a(href='/overview/kids')
+          li.division
+            | للأطفال
+        a(href='/overview/other')
+          li.division
+            | كتب أخرى
+        a(href='/overview')
+          li.division
+            | منتجات أخرى

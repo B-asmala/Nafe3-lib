@@ -1,0 +1,33 @@
+extends base
+
+
+block content
+    main 
+    article
+    .container
+
+        br
+        div#info رجاء قم بأخذ لقطة شاشة ثم أرسل الصورة عن طريق أحد الوسائل بالأسفل
+        div#cart-info
+        a#delete-cart(href="/cart" onclick="deleteCart();") أفرغ السلة
+        h2.h2.section-title تواصل مع 
+        #social
+            a(href='https://t.me/Nafe7shop23')
+                img.social-photo(src='img/telegram.png' alt='')
+                br
+                h2.contact-name &#x623;&#x645; &#x627;&#x644;&#x631;&#x62D;&#x64A;&#x642;
+            a(href='https://t.me/ZadAlmosafeer')
+                img.social-photo(src='img/telegram.png' alt='')
+                br
+                h2.contact-name &#x623;&#x645; &#x639;&#x628;&#x62F;&#x627;&#x644;&#x644;&#x647;
+            a(href='https://wa.me/message/I5PCXY4ZFEKTG1')
+                img.social-photo(src='img/whatsapp.jpeg' alt='')
+                br
+                h2.contact-name &#x623;&#x645; &#x627;&#x644;&#x631;&#x62D;&#x64A;&#x642;
+
+    
+
+
+
+
+    script(src="/js/cart.js")

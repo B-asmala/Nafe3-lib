@@ -1,0 +1,28 @@
+extends base
+
+block content
+  main
+  article
+    section#sales.section.product
+  .container
+    h2.h2.section-title #{title}
+    ul.product-list
+      each product in products
+        li
+          .product-card
+            figure.card-banner
+              div
+                img.w-100(src=`https://raw.githubusercontent.com/Nafe3-Library/product-images/refs/heads/main/${product.slug}.jpg` alt=`${product.title}` loading='lazy' width='800' height='1034')
+              
+              .card-actions
+                a.add.card-action-btn.cart-btn(href='#' onclick=`addToCart("${product.title}", "${product.price - product.discount}");`)
+                  ion-icon(name='bag-handle-outline' aria-hidden='true')
+                  p &#x627;&#x634;&#x62A;&#x631; &#x627;&#x644;&#x622;&#x646;
+            .card-content
+              h3.h4.card-title
+                div= `${product.title}`
+              .card-price
+                data(value=`${product.price - product.discount}`)=  `£${product.price - product.discount}`
+                if product.discount > 0
+                  data(value= `${product.price}`)= `£${product.price}`
+
